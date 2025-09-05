@@ -65,3 +65,6 @@ console.log(Object.entries(tinderUser));
 
 console.log(tinderUser.hasOwnProperty('isLogged'));
 // hasOwnProperty  => hasOwnProperty → checks only the object itself. if exist then return true otherwise false
+
+
+// This commit only for the rename previous commit

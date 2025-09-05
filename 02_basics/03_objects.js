@@ -4,7 +4,7 @@
 
 // objects  literals
 const mySym = Symbol("Key1") // if we want to show the symbol in object then we declare inside then we execute
-const jsUser =  {
+const jsUser =  { 
     name: "Saurav",
     "full name": "Saurav Singh", // we can't access the key of full name with jsuser.full name Therefore we use to access for square notation jsuser["full name"] then we access the value 
     age : 18,
@@ -32,9 +32,10 @@ jsUser.greeting = function(){
     console.log("Helo JS user");
 }
 jsUser.greetingTwo = function(){
-    console.log(`Helo JS user ${this.name}`);
+    console.log(`Helo JS user ${this.name}`); // String interpolation means inserting variables or expressions inside a string instead of concatenating them manually.
 }
-console.log(jsUser.greeting());
+console.log(jsUser.greeting); // show function refrence 
+console.log(jsUser.greeting()); 
 console.log(jsUser.greetingTwo());
 
 

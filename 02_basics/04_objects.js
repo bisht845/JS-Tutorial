@@ -49,22 +49,42 @@ const users = [
         phoneno: "123456789"
     }
 ]
-console.log(users[0].email); //  way to access value in array of objects
+// console.log(users[0].email); //  way to access value in array of objects
 
-console.log(tinderUser);
-console.log (Object.keys(tinderUser)) ; 
+// console.log(tinderUser);
+// console.log (Object.keys(tinderUser)) ; 
 // Object.keys =>  ways to get only keys in the objects .Always give output with an array 
 // *  Returns an array of all property names (keys) of an object.
 
-console.log(Object.values(tinderUser));
+// console.log(Object.values(tinderUser));
 // Objects.value =>  way to get value in the objects. 
 // * Returns an array of all property values of an object.
 
-console.log(Object.entries(tinderUser));
+// console.log(Object.entries(tinderUser));
 // Objects.entries => returns [key, value] pairs as an array 
 
-console.log(tinderUser.hasOwnProperty('isLogged'));
+// console.log(tinderUser.hasOwnProperty('isLogged'));
 // hasOwnProperty  => hasOwnProperty → checks only the object itself. if exist then return true otherwise false
 
 
-// This commit only for the rename previous commit
+const course = {
+    coursename : "JS in Hindi",
+    price : "Free",
+    courseInstructor: "Hitesh Sir"
+}
+// console.log(course.courseInstructor); // this way to get result of key 
+
+const {courseInstructor: teachername} = course // this is way to destucture of object
+
+// console.log(courseInstructor);
+//  console.log(teachername); 
+
+
+// {
+//     "name" : "saurav", // this is a JSON {} format .  Key value  is come string method  ("key" : "value") in JSON  format (not come number and boolean beacause that dataType is diffrent)
+//     "price" : "free", // JSON => JavaScript object notation
+//     "coursename" : "js"
+// }
+
+
+

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai aur Code </title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+    <script>
+       const parent = document.querySelector('.parent')
+    //    console.log(parent);
+    //    console.log(parent.children);
+    //    console.log(parent.children[1].innerHTML);
+        // children use for show all div in this
+        // HTML colletion is a array like property
+
+        // for (let i = 0; i < parent.children.length; i++) {
+        //     console.log(parent.children[i].innerHTML);
+        // }
+        parent.children[1].style.color = 'orange'
+        // console.log(parent.firstElementChild); // shows first element of parent div 
+        // console.log(parent.lastElementChild); // shows last element of parent div 
+        
+        const dayOne = document.querySelector('.day')
+        // console.log(dayOne);
+        // console.log(dayOne.parentElement); // show the parent div of day
+        // console.log(dayOne.nextElementSibling); // show the next div after monday with styling
+        // // console.log(dayOne.nextSibling);
+        
+        console.log("NODES :", parent.childNodes);
+        // ChildNodes is count break in every element and comments
+        // if we use more then one break then browser will not count the break
+    </script>
+</body>
+</html>

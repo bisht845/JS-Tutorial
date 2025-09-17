@@ -1,0 +1,86 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body */
+body {
+  background: linear-gradient(135deg, #89f7fe, #66a6ff);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+header {
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Container */
+.container {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  padding: 50px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Card */
+.card {
+  background: #fff;
+  padding: 30px 20px;
+  border-radius: 16px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Card hover effect */
+.card:hover {
+  transform: translateY(-8px) scale(1.05);
+  background: linear-gradient(135deg, #f6d365, #fda085);
+  color: #fff;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+}
+
+/* Card ripple-like effect */
+.card::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.3) 20%, transparent 60%);
+  transform: scale(0);
+  transition: transform 0.4s ease;
+  border-radius: 50%;
+}
+
+.card:hover::after {
+  transform: scale(1);
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: inherit;
+}

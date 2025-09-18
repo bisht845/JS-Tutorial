@@ -1,0 +1,93 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Body */
+body {
+  background: linear-gradient(135deg, #89f7fe, #66a6ff);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: center;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 20px;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  width: 100%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+header h1 {
+  margin-bottom: 10px;
+}
+
+.home-btn {
+  display: inline-block;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #f6d365, #fda085);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+.home-btn:hover {
+  background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+  transform: scale(1.05);
+}
+
+/* Main Container */
+.container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 40px 20px;
+}
+/* Clock Card */
+.clock-card {
+  background: #ffffff;    
+  padding: 40px 60px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Time */
+.time {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #000000;      
+  margin-bottom: 15px;
+  letter-spacing: 3px;
+}
+
+/* Date */
+.date {
+  font-size: 1.5rem;
+  color: #000000;         
+}
+
+
+/* Responsive */
+@media(max-width: 500px){
+  .clock-card {
+    padding: 30px 20px;
+  }
+  .time {
+    font-size: 3rem;
+  }
+  .date {
+    font-size: 1.2rem;
+  }
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Guess The Number</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>🎯 Guess The Number</h1>
+    <a class="home-btn" href="../home.html">🏠 Home</a>
+  </header>
+
+  <main class="container">
+    <section class="game-card" aria-labelledby="game-title">
+      <h2 id="game-title">Try to guess the secret number</h2>
+      <p class="subtitle">Pick a number between <strong>1</strong> to <strong>100</strong>. You have <span class="attempts">10</span> attempts.</p>
+
+      <!-- visual input area (not functional without JS) -->
+      <div class="input-row">
+        <!-- <label for="guess" class="visually-hidden">Your guess</label> -->
+        <input id="guess" type="number"  placeholder="Enter your guess" />
+        <button class="btn primary" type="button">Submit</button>
+      </div>
+
+      <!-- <div class="controls">
+        <button class="btn ghost" type="button">Hint</button>
+        <button class="btn danger" type="button">Start New Game</button>
+      </div> -->
+
+      <!-- placeholders that JS would update -->
+      <div class="status">
+        <p class="feedback">Feedback: </p>
+        <p class="tries">Attempts left: <span class="tries-left">10</span></p>
+      </div>
+
+      <div class="history">
+        <h3>Previous guesses</h3>
+        <ul class="guess-list">
+          <!-- JS will fill previous guesses here -->
+          <li class="muted">No guesses yet</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Good luck — may the odds be in your favor!</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

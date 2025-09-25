@@ -24,6 +24,26 @@
         
     // },1000)
 
+    // task is when press the start btn then prints name when press stop then stop 
 
+    let intervalId;
+    const startfn = function(){
+        if (!intervalId){
+      intervalId = setInterval(() =>{
+            console.log("Hello Saurav");
+            
+        }, 1000)
+    }
+    }
+    const stopfn = function(){
+        clearInterval(intervalId)
+        intervalId = null; // reset so Start can work again
+    }
+
+    document.getElementById('start').
+    addEventListener('click', startfn);
+
+    document.getElementById('stop').
+    addEventListener('click', stopfn)
 </script>
 </html>     

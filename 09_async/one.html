@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async & timerIntervel & setTimeOut </title>
+</head>
+
+<body>
+    <h1>Chai Aur Code </h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // handler is callback . we use refrence in this
+    // setTimeOut print one time 
+
+    // setTimeout(function () {
+    //     console.log("saurav");
+
+    // }, 2000)
+
+    // 2nd approach
+    // const saySaurav = () => {
+    //     console.log("saurav");
+    // }
+    // setTimeout(saySaurav, 2000)
+
+    const changeText = function () {
+         document.querySelector('h1')
+         .innerHTML = 'Hello Saurav' }
+    // setTimeout(changeText, 3000)
+
+        // stop the setTimeOut function
+     const changeMe = setTimeout(changeText, 2000);   
+
+     document.querySelector('#stop').
+     addEventListener('click', function() {
+        clearTimeout(changeMe)
+        console.log('Stopped')
+     })
+</script>
+
+</html>

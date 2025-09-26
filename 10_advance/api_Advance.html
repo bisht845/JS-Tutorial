@@ -1,58 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>API With Ajax</title>
 </head>
+
 <body style="background-color: #212121; color: #fff;">
 
-| Value |     State              |          Meaning                                     |
-| ----- | ------------------ | -------------------------------------------------------- |
-| **0** | `UNSENT`           | Request object created but not opened yet.               |
-| **1** | `OPENED`           | `open()` has been called, but request not sent.          |
-| **2** | `HEADERS_RECEIVED` | `send()` has been called, server responded with headers. |
-| **3** | `LOADING`          | Response body is being received (data is downloading).   |
-| **4** | `DONE`             | Request is finished, response is ready.                  |
-
+    | Value | State | Meaning |
+    | ----- | ------------------ | -------------------------------------------------------- |
+    | **0** | `UNSENT` | Request object created but not opened yet. |
+    | **1** | `OPENED` | `open()` has been called, but request not sent. |
+    | **2** | `HEADERS_RECEIVED` | `send()` has been called, server responded with headers. |
+    | **3** | `LOADING` | Response body is being received (data is downloading). |
+    | **4** | `DONE` | Request is finished, response is ready. |
+    <div class="main">
+        <h1>Name: </h1>
+        <img src="" alt="Profile">
+        <h1>followers</h1>
+        <button id="btn">Show data</button>
+    </div>
 </body>
 <script>
-    // 👉 Step 1: The URL we want to fetch (GitHub API gives user info in JSON)
-    const requestUrl  = 'https://api.github.com/users/hiteshchoudhary';
+    // const requestUrl  = 'https://api.github.com/users/hiteshchoudhary';
 
-    // 👉 Step 2: Create a new request object
-    // Think of this like a “phone” we’ll use to talk to the server
-    const xhr = new XMLHttpRequest();
+    // // 👉 This code is creating a new XMLHttpRequest object
+    // const xhr = new XMLHttpRequest();
 
-    // 👉 Step 3: Prepare the request
-    // open(method, url) = just telling WHAT we want (GET) and WHERE from (URL)
-    // Till now we haven't sent anything, just dialed the number 😅
-    xhr.open('GET', requestUrl);
+    // // 👉 This code is preparing the request (GET request to the GitHub API URL)
+    // // open() just sets up the call, it does not send yet
+    // xhr.open('GET', requestUrl);
 
-    // 👉 Step 4: This function runs again and again when state changes
-    // readyState goes like → 0 (created) → 1 (opened) → 2 (headers) → 3 (loading) → 4 (done)
-    xhr.onreadystatechange = function(){    
-        console.log(xhr.readyState); // just tracking progress in console
+    // // 👉 This code is tracking the progress of the request
+    // // onreadystatechange runs every time readyState changes
+    // xhr.onreadystatechange = function(){    
 
-        // 👉 Step 5: Check when request is DONE (4 = finished)
-        if (xhr.readyState === 4) {
+    //     // 👉 This code is showing the current state (1 → 2 → 3 → 4)
+    //     console.log("Current readyState:", xhr.readyState);  
+
+    //     // 👉 This code checks if request is DONE (4 = finished, response ready)
+    //     if (xhr.readyState === 4) {
+
+    //         // 👉 This code converts the string response (JSON text) into a real object
+    //         const data = JSON.parse(this.responseText);  
+
+    //         // this.responseText === xhr.responseText
+    //         // We use "this" because it's the current request context
+
+    //         // 👉 This code checks the type of data after parsing (it will be an object now)
+    //         console.log("Type of data after JSON.parse:", typeof data); // "object"
+
+    //         console.log("Followers:", data.followers); 
+    //     }
+    // }
+
+    // 👉 This code is actually sending the request
+    // xhr.send();
+
+
+        // task => show the data after click btn 
+
+        const requestUrl = "https://api.github.com/users/hiteshchoudhary";
+        let userData;
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', requestUrl);
+        // console.log(xhr.readyState);  // not state in 0(UNSENT)
+
+        xhr.onreadystatechange = function(){
+            console.log('Now state is :', xhr.readyState); // check the state 
+            if(xhr.readyState === 4 && xhr.status === 200 ){
+                 userData = JSON.parse(this.responseText);        
+                //  console.log(typeof userData); //without use JSON.parse data comes in string
+                console.log(this.responseText);
+                console.log('UserName: ',userData.name);
+                console.log('UserBio: ',userData.bio);
+
+        const pera = document.createElement('p')
+                pera.innerHTML = `
+               <h2>Name : </h2> ${userData.name}  <br>
+               <h2>Bio : </h2> ${userData.bio} <br>
+               <h2>Follower : </h2> ${userData.followers}
+                `
+                document.body.appendChild(pera)
+            }
             
-            // 👉 Step 6: By default, response comes as STRING
-            // Example: '{"login":"hiteshchoudhary","followers":12345}' (looks like object, but it’s text)
-            // So we use JSON.parse() → convert that string into a real object
-            const data = JSON.parse(this.responseText);
-
-            // 👉 Step 7: Now typeof is "object" (so we can use dot notation)
-            console.log(typeof data);  // outputs: object
-
-            // 👉 Step 8: Access a property from that object → followers count
-            console.log(data.followers); 
         }
-    }
+        
+        xhr.send()
 
-    // 👉 Step 9: Send the request to server 🚀
-    // This is like pressing the “call” button after dialing the number.
-    xhr.send();
+
 </script>
+
 
 </html>

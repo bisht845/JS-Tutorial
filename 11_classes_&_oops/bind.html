@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React </title>
+</head>
+<body>
+    <button>Button Clicked</button>
+</body>
+<script>
+    class React {
+        constructor (){
+            this.library = "React"
+            this.server = "https://localhost:3000"
+
+            document
+            .querySelector('button')
+            .addEventListener('click', this.handleClick
+            .bind(this))
+            // ⭐ “bind attaches the function to a specific object as its ‘this’ context.”
+            // 👉 bind() was used to fix this in old JavaScript, but now arrow functions and modern class syntax make bind unnecessary in most cases.
+        }
+
+        handleClick(){
+            console.log("button Cliked");
+            // console.log(this);
+            console.log(this.server);
+        }
+    }
+
+    const app = new React()
+</script>
+</html>
